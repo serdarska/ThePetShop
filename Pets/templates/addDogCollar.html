@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-6" style="padding-left:500px;">
+        <h3 class="my-4 ms-5">Add New Collar:</h3>
+        <form class="ms-5 mb-3" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-secondary rounded-5 py-2">Add Item</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

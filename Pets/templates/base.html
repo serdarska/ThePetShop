@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>MyPetShop</title>
+</head>
+<body>
+{% load static %}
+<div>
+    <img class="img-fluid" src="{% static 'navbar.png' %}">
+</div>
+
+<div class="row">
+    <div class="col-10" style="padding-left:280px">
+        <div class="d-flex justify-content-center my-4">
+    <form class="d-flex pe-5">
+        <input class="form-control me-3 pe-5 rounded-5 text-black" type="search" placeholder="Search for products"
+               aria-label="Search" style="background-color: rgba(0, 0, 0, 0.2);">
+    </form>
+</div>
+    </div>
+    <div class="col-2">
+        <div class="dropdown ms-5 ps-5">
+            <button class="btn btn-small dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{% static 'user.png' %}" style="width:20px;height:20px">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                <li><a class="dropdown-item" href="{% url 'register' %}">Create an account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light d-flex"
+     style="padding-left:450px;background-color: rgba(0, 0, 0, 0.2);">
+    <div class="container-fluid ">
+        <a class="navbar-brand fs-4" href="{% url 'index' %}" style="font-family:TimeNewRoman;">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown ms-3">
+                    <a class="nav-link dropdown-toggle fs-4" href="#" id="dropdown1" role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false" style="font-family:TimeNewRoman;">
+                        Dogs
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown1">
+                        <li><a class="dropdown-item" href="{% url 'DogFoods' %}">Dog Food</a></li>
+                        <li><a class="dropdown-item" href="{% url 'DogBeds' %}">Dog Beds</a></li>
+                        <li><a class="dropdown-item" href="{% url 'DogToys' %}">Dog Toys</a></li>
+                        <li><a class="dropdown-item" href="{% url 'DogCollarAndLeash' %}">Dog Collar and Leash</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown ms-3">
+                    <a class="nav-link dropdown-toggle fs-4" href="#" id="dropdown2" role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false" style="font-family:TimeNewRoman;">
+                        Cats
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown2">
+                        <li><a class="dropdown-item" href="{% url 'CatFoods' %}">Cat Food</a></li>
+                        <li><a class="dropdown-item" href="{% url 'CatToys' %}">Cat Toys</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link active fs-4" aria-current="page" href="{% url 'aboutus' %}"
+                       style="font-family:TimeNewRoman;">About Us</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="nav-link active fs-4" aria-current="page" href="{% url 'contactus' %}"
+                       style="font-family:TimeNewRoman;">Contact Us</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+<footer class="bg-light text-center text-lg-start">
+    <div class="text-start fw-bold ps-5 py-2" style="background-color: rgba(0, 0, 0, 0.2);">
+        MyPetShop © 2023 Copyright
+    </div>
+</footer>
+</body>
+</html>

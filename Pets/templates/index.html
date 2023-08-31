@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="my-5">
+    <img class="img-fluid" src="{% static 'index.png' %}">
+</div>
+<div class="my-5 text-center">
+    <h1 class="my-3">Explore our products</h1>
+
+    <div class="row">
+            {% for collar in collars %}
+            <div class="col-md-4 mb-4">
+                <div class="card my-5 ms-3" style="width: 25rem;">
+                    <img src="{{ MEDIA_URL }}{{ collar.image.url }}" class="card-img-top" alt="Dog Food">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ collar.title }}</h5>
+                        <a href="#" class="btn btn-secondary rounded-5 py-2">See more</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 my-5 py-3">
+            <h1 class="text-center mb-5" style="font-family:TimeNewRoman;">Register</h1>
+
+            <form class="text-center" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-dark rounded-5 btn-block ms-5 px-4 py-2 mb-3 text-center">Create
+                </button>
+                <a class="ms-5 text-black fw-bold mt-3 text-center mb-5" href="{% url 'index' %}">Return to the
+                    store</a>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

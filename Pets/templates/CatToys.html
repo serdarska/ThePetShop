@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <h1 class="text-center mt-3" style="font-family:TimeNewRoman;">Cat Toys</h1>
+
+    <div class="d-flex inline-block">
+        <div class="row">
+            {% for toy in toys %}
+            <div class="col-md-4 mb-4">
+                <div class="card my-5 ms-3" style="width: 18rem;">
+                    <img src="{{ MEDIA_URL }}{{ toy.image.url }}" class="card-img-top" alt="Dog Food">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ toy.title }}</h5>
+                        <p class="card-text">{{ toy.price }} ден.</p>
+                        <a href="#" class="btn btn-secondary rounded-5 py-2">See more</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
